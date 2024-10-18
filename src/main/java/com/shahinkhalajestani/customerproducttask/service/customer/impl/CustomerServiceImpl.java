@@ -10,7 +10,6 @@ import com.shahinkhalajestani.customerproducttask.service.customer.mapper.Custom
 import com.shahinkhalajestani.customerproducttask.service.customer.model.AddressServiceModel;
 import com.shahinkhalajestani.customerproducttask.service.customer.model.CustomerServiceModel;
 import jakarta.transaction.Transactional;
-import jakarta.validation.ConstraintViolationException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -34,7 +33,7 @@ public class CustomerServiceImpl implements CustomerService {
 		var customer = serviceMapper.toCustomer(customerServiceModel);
 		try {
 			customerDao.save(customer);
-		} catch (ConstraintViolationException e) {
+		} catch (RuntimeException e) {
 			throw new DuplicateRecordException("Customer already exists");
 		}
 	}

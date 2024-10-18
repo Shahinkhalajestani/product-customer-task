@@ -13,7 +13,6 @@ import com.shahinkhalajestani.customerproducttask.service.product.mapper.Product
 import com.shahinkhalajestani.customerproducttask.service.product.model.CompanyServiceModel;
 import com.shahinkhalajestani.customerproducttask.service.product.model.ProductServiceModel;
 import jakarta.transaction.Transactional;
-import jakarta.validation.ConstraintViolationException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -38,7 +37,7 @@ public class ProductServiceImpl implements ProductService {
 		var company = serviceMapper.toCompany(companyServiceModel);
 		try {
 			companyDao.save(company);
-		} catch (ConstraintViolationException e) {
+		} catch (RuntimeException e) {
 			throw new DuplicateRecordException("company already exists");
 		}
 	}
@@ -49,8 +48,8 @@ public class ProductServiceImpl implements ProductService {
 		log.info("Going to add product with name : {}", productServiceModel.getName());
 		var product = serviceMapper.toProduct(productServiceModel);
 		var company = findCompany(productServiceModel.getCompany());
-		company.addProduct(product);
-		companyDao.save(company);
+		product.setCompany(company);
+		productDao.save(product);
 	}
 
 	private Company findCompany(String companyName) {

@@ -38,16 +38,16 @@ public class ReviewServiceImpl implements ReviewService {
 	public List<ReviewServiceModel> getProductReviews(String productId, String customerId) {
 		var product = productService.getProduct(productId);
 		var customer = customerService.getCustomer(customerId);
-		if (ProductReviewVisibility.NONE.equals(product.getReviewVisibility())) {
-			return Collections.emptyList();
+		if (ProductReviewVisibility.EVERY_ONE.equals(product.getReviewVisibility())) {
+			var reviews = reviewDao.findAllByProductId(product.getProductId());
+			return serviceMapper.toReviewModels(reviews);
 		} else if (isReviewsVisibleJustForBuyers(productId, customerId, product)) {
 			log.info("Going to fetch reviews for buying customers for product : {}, and customer : {}"
-					,product.getProductId(), customer.getNationalCode());
+					, product.getProductId(), customer.getNationalCode());
 			var reviews = reviewDao.findAllByProductId(product.getProductId());
 			return serviceMapper.toReviewModels(reviews);
-		}else {
-			var reviews = reviewDao.findAllByProductId(product.getProductId());
-			return serviceMapper.toReviewModels(reviews);
+		} else {
+			return Collections.emptyList();
 		}
 	}
 
@@ -61,7 +61,7 @@ public class ReviewServiceImpl implements ReviewService {
 		var customer = customerService.getCustomer(reviewServiceModel.getCustomerId());
 		var product = productService.getProduct(reviewServiceModel.getProductId());
 		log.info("Going to add review for product : {} and customer : {}", product.getProductId(), customer.getNationalCode());
-		var review  = serviceMapper.toReview(reviewServiceModel);
+		var review = serviceMapper.toReview(reviewServiceModel);
 		reviewDao.save(review);
 	}
 }

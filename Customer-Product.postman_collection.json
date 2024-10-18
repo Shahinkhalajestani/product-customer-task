@@ -1,0 +1,990 @@
+{
+  "info": {
+    "_postman_id": "f0fbdcc3-87ec-4e6d-89b8-e4ec2c34d5c2",
+    "name": "Customer-Product",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "29802984"
+  },
+  "item": [
+    {
+      "name": "products",
+      "item": [
+        {
+          "name": "product",
+          "item": [
+            {
+              "name": "update",
+              "item": [
+                {
+                  "name": "{productId}",
+                  "item": [
+                    {
+                      "name": "update Product",
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"reviewVisibility\": \"BUYERS\",\n  \"visibility\": \"<boolean>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/products/product/update/:productId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "products",
+                            "product",
+                            "update",
+                            ":productId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "productId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"reviewVisibility\": \"BUYERS\",\n  \"visibility\": \"<boolean>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/products/product/update/:productId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "products",
+                                "product",
+                                "update",
+                                ":productId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "productId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"message\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"resultStatus\": \"PRODUCT_NOT_ENOUGH\"\n}"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "{productId}",
+              "item": [
+                {
+                  "name": "get Product",
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/products/product/:productId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "products",
+                        "product",
+                        ":productId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "productId",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/products/product/:productId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "products",
+                            "product",
+                            ":productId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "productId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"message\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"resultStatus\": \"INVALID_PARAMETER\",\n  \"productId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"visible\": \"<boolean>\",\n  \"company\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"reviewVisibility\": \"EVERY_ONE\"\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "save Product",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"company\": \"<string>\",\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"reviewVisibility\": \"NONE\",\n  \"visible\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/products/product",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products",
+                    "product"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"company\": \"<string>\",\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"reviewVisibility\": \"NONE\",\n  \"visible\": \"<boolean>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/products/product",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "products",
+                        "product"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"message\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"resultStatus\": \"PRODUCT_NOT_ENOUGH\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "company",
+          "item": [
+            {
+              "name": "{name}",
+              "item": [
+                {
+                  "name": "get Product By Company",
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/products/company/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "products",
+                        "company",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "key": "name",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/products/company/:name",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "products",
+                            "company",
+                            ":name"
+                          ],
+                          "variable": [
+                            {
+                              "key": "name"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"message\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"resultStatus\": \"DUPLICATE_RECORD\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"products\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "save Company",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/products/company",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products",
+                    "company"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/products/company",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "products",
+                        "company"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"message\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"resultStatus\": \"PRODUCT_NOT_ENOUGH\"\n}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "reviews",
+      "item": [
+        {
+          "name": "get Review",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/reviews?productId=<string>&customerId=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "reviews"
+              ],
+              "query": [
+                {
+                  "key": "productId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "customerId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/reviews?productId=<string>&customerId=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "reviews"
+                  ],
+                  "query": [
+                    {
+                      "key": "productId",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    },
+                    {
+                      "key": "customerId",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"resultStatus\": \"SUCCESS\",\n  \"reviews\": [\n    {\n      \"productId\": \"<string>\",\n      \"customerId\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"vote\": \"VERY_WEAK\",\n      \"reviewDate\": \"<dateTime>\"\n    },\n    {\n      \"productId\": \"<string>\",\n      \"customerId\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"vote\": \"WEAK\",\n      \"reviewDate\": \"<dateTime>\"\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "save Review",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerId\": \"<string>\",\n  \"productId\": \"<string>\",\n  \"vote\": \"OK\",\n  \"comment\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/reviews",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "reviews"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customerId\": \"<string>\",\n  \"productId\": \"<string>\",\n  \"vote\": \"OK\",\n  \"comment\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/reviews",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "reviews"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"resultStatus\": \"PRODUCT_NOT_ENOUGH\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "orders",
+      "item": [
+        {
+          "name": "put Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerId\": \"<string>\",\n  \"productId\": \"<string>\",\n  \"quantity\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/orders",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customerId\": \"<string>\",\n  \"productId\": \"<string>\",\n  \"quantity\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/orders",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "orders"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"resultStatus\": \"PRODUCT_NOT_ENOUGH\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "customers",
+      "item": [
+        {
+          "name": "address",
+          "item": [
+            {
+              "name": "{customerId}",
+              "item": [
+                {
+                  "name": "add Address",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"postalCode\": \"<string>\",\n  \"street\": \"<string>\",\n  \"city\": \"<string>\",\n  \"province\": \"<string>\",\n  \"houseNumber\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/customers/address/:customerId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "customers",
+                        "address",
+                        ":customerId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "customerId",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"postalCode\": \"<string>\",\n  \"street\": \"<string>\",\n  \"city\": \"<string>\",\n  \"province\": \"<string>\",\n  \"houseNumber\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/customers/address/:customerId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "customers",
+                            "address",
+                            ":customerId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "customerId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"message\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"resultStatus\": \"PRODUCT_NOT_ENOUGH\"\n}"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "{customerId}",
+          "item": [
+            {
+              "name": "get Customers",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/customers/:customerId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "customers",
+                    ":customerId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "customerId",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/customers/:customerId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "customers",
+                        ":customerId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "customerId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"message\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"resultStatus\": \"PRODUCT_NOT_ENOUGH\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "sign Up Customer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nationalCode\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/customers",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "customers"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nationalCode\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/customers",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "customers"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"message\": \"<string>\",\n  \"code\": \"<integer>\",\n  \"resultStatus\": \"PRODUCT_NOT_ENOUGH\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:7098/customer-product/api"
+    }
+  ]
+}

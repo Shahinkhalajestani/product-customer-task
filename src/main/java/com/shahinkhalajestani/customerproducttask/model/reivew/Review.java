@@ -44,7 +44,7 @@ public class Review {
 	@Enumerated(EnumType.STRING)
 	private Vote vote;
 
-	@Column(name = "review_date",nullable = false)
+	@Column(name = "review_date", nullable = false)
 	private LocalDateTime reviewDate;
 
 }
