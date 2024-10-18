@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = false)
 public class ProductResponseDto extends ResponseModel {
 
-	private Long productId;
+	private String productId;
 
 	private String name;
 

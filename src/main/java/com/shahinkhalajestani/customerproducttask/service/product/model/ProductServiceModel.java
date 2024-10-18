@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ProductServiceModel {
 
-	private Long productId;
+	private String productId;
 
 	private String name;
 
