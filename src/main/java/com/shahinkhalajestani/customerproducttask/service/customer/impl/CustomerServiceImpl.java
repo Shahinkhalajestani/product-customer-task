@@ -10,7 +10,6 @@ import com.shahinkhalajestani.customerproducttask.service.customer.mapper.Custom
 import com.shahinkhalajestani.customerproducttask.service.customer.model.AddressServiceModel;
 import com.shahinkhalajestani.customerproducttask.service.customer.model.CustomerServiceModel;
 import jakarta.transaction.Transactional;
-import jakarta.validation.ConstraintViolationException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 

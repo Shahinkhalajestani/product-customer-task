@@ -12,7 +12,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 import org.mapstruct.ReportingPolicy;
 
-@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.ERROR, imports = { ResultStatus.class})
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.ERROR, imports = { ResultStatus.class })
 public interface ReviewResourceMapper {
 
 	ReviewDto toReviewDto(ReviewServiceModel reviewServiceModel);
@@ -21,7 +21,7 @@ public interface ReviewResourceMapper {
 	List<ReviewDto> toReviewDtos(List<ReviewServiceModel> reviewServiceModels);
 
 
-	default ReviewResponseModel tReviewResponseModel(List<ReviewServiceModel> reviews){
+	default ReviewResponseModel tReviewResponseModel(List<ReviewServiceModel> reviews) {
 		ReviewResponseModel reviewResponseModel = new ReviewResponseModel();
 		reviewResponseModel.setResultStatus(ResultStatus.SUCCESS);
 		reviewResponseModel.setReviews(toReviewDtos(reviews));

@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import com.shahinkhalajestani.customerproducttask.model.reivew.Review;
-import com.shahinkhalajestani.customerproducttask.service.review.ReviewService;
 import com.shahinkhalajestani.customerproducttask.service.review.model.ReviewServiceModel;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -23,6 +22,5 @@ public interface ReviewServiceMapper {
 
 
 	List<ReviewServiceModel> toReviewModels(List<Review> reviews);
-
 
 }
