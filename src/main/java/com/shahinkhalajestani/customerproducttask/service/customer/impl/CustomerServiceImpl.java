@@ -34,7 +34,7 @@ public class CustomerServiceImpl implements CustomerService {
 		var customer = serviceMapper.toCustomer(customerServiceModel);
 		try {
 			customerDao.save(customer);
-		} catch (ConstraintViolationException e) {
+		} catch (RuntimeException e) {
 			throw new DuplicateRecordException("Customer already exists");
 		}
 	}
