@@ -24,5 +24,8 @@ public class ProductSaveDto {
 	private String company;
 
 	@NotNull
+	private Integer quantity;
+
+	@NotNull
 	private ProductReviewVisibility reviewVisibility;
 }

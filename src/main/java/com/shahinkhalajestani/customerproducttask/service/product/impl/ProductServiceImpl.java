@@ -1,6 +1,7 @@
 package com.shahinkhalajestani.customerproducttask.service.product.impl;
 
 import com.shahinkhalajestani.customerproducttask.base.exception.DuplicateRecordException;
+import com.shahinkhalajestani.customerproducttask.base.exception.ProductDoesNotHaveQuantityException;
 import com.shahinkhalajestani.customerproducttask.base.exception.RecordNotFoundException;
 import com.shahinkhalajestani.customerproducttask.model.product.Company;
 import com.shahinkhalajestani.customerproducttask.model.product.CompanyDao;
@@ -43,6 +44,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
+	@Transactional
 	public void addProduct(ProductServiceModel productServiceModel) {
 		log.info("Going to add product with name : {}", productServiceModel.getName());
 		var product = serviceMapper.toProduct(productServiceModel);
@@ -74,11 +76,23 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
+	@Transactional
 	public void updateProductCondition(String productId, ProductReviewVisibility productReviewVisibility, boolean visibility) {
 		log.info("Going to update product with id : {}", productId);
 		var product = findProduct(productId);
 		product.setReviewVisibility(productReviewVisibility);
 		product.setVisible(visibility);
+		productDao.save(product);
+	}
+
+	@Override
+	@Transactional
+	public void subtractQuantity(String productId, int quantity) {
+		var product = findProduct(productId);
+		product.setQuantity(product.getQuantity() - quantity);
+		if (product.getQuantity() <= 0) {
+			throw new ProductDoesNotHaveQuantityException("product with id : " + productId + " does not have quantity");
+		}
 		productDao.save(product);
 	}
 }

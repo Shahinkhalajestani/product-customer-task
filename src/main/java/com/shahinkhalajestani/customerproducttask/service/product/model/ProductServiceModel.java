@@ -20,5 +20,7 @@ public class ProductServiceModel {
 
 	private String company;
 
+	private Integer quantity;
+
 	private ProductReviewVisibility reviewVisibility;
 }
