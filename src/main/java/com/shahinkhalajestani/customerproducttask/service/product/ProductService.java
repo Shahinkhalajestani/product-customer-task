@@ -14,6 +14,8 @@ public interface ProductService {
 
 	ProductServiceModel getProduct(String productId);
 
+	void subtractQuantity(String productId, int quantity);
+
 	void updateProductCondition(String productId, ProductReviewVisibility productReviewVisibility, boolean visibility);
 
 }

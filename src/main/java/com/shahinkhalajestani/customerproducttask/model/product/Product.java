@@ -49,6 +49,8 @@ public class Product {
 	@JoinColumn(name = "company_id")
 	private Company company;
 
+	@Column(name = "quantity", nullable = false)
+	private int quantity;
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "review_visibility", nullable = false)

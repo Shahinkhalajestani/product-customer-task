@@ -23,6 +23,8 @@ public class ProductResponseDto extends ResponseModel {
 
 	private String company;
 
+	private Integer quantity;
+
 	private ProductReviewVisibility reviewVisibility;
 
 }
