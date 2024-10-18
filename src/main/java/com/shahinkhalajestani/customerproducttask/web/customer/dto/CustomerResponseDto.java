@@ -1,4 +1,4 @@
-package com.shahinkhalajestani.customerproducttask.web.dto;
+package com.shahinkhalajestani.customerproducttask.web.customer.dto;
 
 import java.util.List;
 

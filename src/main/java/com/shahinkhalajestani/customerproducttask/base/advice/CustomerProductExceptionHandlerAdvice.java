@@ -48,6 +48,4 @@ public class CustomerProductExceptionHandlerAdvice extends ResponseEntityExcepti
 		return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(response);
 	}
 
-
-
 }

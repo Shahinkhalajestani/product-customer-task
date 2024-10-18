@@ -1,14 +1,14 @@
-package com.shahinkhalajestani.customerproducttask.service.impl;
+package com.shahinkhalajestani.customerproducttask.service.customer.impl;
 
 import com.shahinkhalajestani.customerproducttask.base.exception.DuplicateRecordException;
 import com.shahinkhalajestani.customerproducttask.base.exception.RecordNotFoundException;
 import com.shahinkhalajestani.customerproducttask.model.customer.Address;
 import com.shahinkhalajestani.customerproducttask.model.customer.Customer;
 import com.shahinkhalajestani.customerproducttask.model.customer.dao.CustomerDao;
-import com.shahinkhalajestani.customerproducttask.service.CustomerService;
-import com.shahinkhalajestani.customerproducttask.service.mapper.CustomerServiceMapper;
-import com.shahinkhalajestani.customerproducttask.service.model.AddressServiceModel;
-import com.shahinkhalajestani.customerproducttask.service.model.CustomerServiceModel;
+import com.shahinkhalajestani.customerproducttask.service.customer.CustomerService;
+import com.shahinkhalajestani.customerproducttask.service.customer.mapper.CustomerServiceMapper;
+import com.shahinkhalajestani.customerproducttask.service.customer.model.AddressServiceModel;
+import com.shahinkhalajestani.customerproducttask.service.customer.model.CustomerServiceModel;
 import jakarta.transaction.Transactional;
 import jakarta.validation.ConstraintViolationException;
 import lombok.RequiredArgsConstructor;
