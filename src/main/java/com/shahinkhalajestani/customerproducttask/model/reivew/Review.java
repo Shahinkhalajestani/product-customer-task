@@ -1,5 +1,7 @@
 package com.shahinkhalajestani.customerproducttask.model.reivew;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -41,5 +43,8 @@ public class Review {
 
 	@Enumerated(EnumType.STRING)
 	private Vote vote;
+
+	@Column(name = "review_date",nullable = false)
+	private LocalDateTime reviewDate;
 
 }

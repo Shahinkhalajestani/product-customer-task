@@ -8,4 +8,7 @@ public interface ProductDao extends JpaRepository<Product, Long> {
 
 	Optional<Product> findByProductId(String productId);
 
+
+	Optional<Product> findByProductIdAndVisibleIsTrue(String productId);
+
 }

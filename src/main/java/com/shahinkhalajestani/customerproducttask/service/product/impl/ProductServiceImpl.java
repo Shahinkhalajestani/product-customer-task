@@ -67,7 +67,8 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public ProductServiceModel getProduct(String productId) {
 		log.info("Going to find product with id : {}", productId);
-		var product = findProduct(productId);
+		var product = productDao.findByProductIdAndVisibleIsTrue(productId)
+				.orElseThrow(() -> new RecordNotFoundException("Product not found with id : " + productId));
 		return serviceMapper.toProductServiceModel(product);
 	}
 

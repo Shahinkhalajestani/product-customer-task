@@ -24,7 +24,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "customers", indexes = {
 		@Index(name = "customer_id_idx", columnList = "customer_id", unique = true),
-		@Index(name = "phone_number_idx", columnList = "phone_number", unique = true)
+		@Index(name = "national_code_idx", columnList = "national_code", unique = true)
 })
 @NoArgsConstructor
 @AllArgsConstructor
