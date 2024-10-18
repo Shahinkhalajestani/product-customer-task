@@ -59,7 +59,7 @@ public class Customer {
 
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
 	@JoinColumn(name = "customer_id")
-	private List<Address> addresses =  new ArrayList<>();
+	private List<Address> addresses = new ArrayList<>();
 
 	@Version
 	@Column(name = "version")

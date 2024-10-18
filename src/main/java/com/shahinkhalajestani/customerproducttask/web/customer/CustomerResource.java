@@ -1,11 +1,11 @@
-package com.shahinkhalajestani.customerproducttask.web;
+package com.shahinkhalajestani.customerproducttask.web.customer;
 
 
 import com.shahinkhalajestani.customerproducttask.base.model.ResponseModel;
-import com.shahinkhalajestani.customerproducttask.service.CustomerService;
-import com.shahinkhalajestani.customerproducttask.web.dto.CustomerAddressDto;
-import com.shahinkhalajestani.customerproducttask.web.dto.CustomerSignUpDto;
-import com.shahinkhalajestani.customerproducttask.web.mapper.CustomerResourceMapper;
+import com.shahinkhalajestani.customerproducttask.service.customer.CustomerService;
+import com.shahinkhalajestani.customerproducttask.web.customer.dto.CustomerAddressDto;
+import com.shahinkhalajestani.customerproducttask.web.customer.dto.CustomerSignUpDto;
+import com.shahinkhalajestani.customerproducttask.web.customer.mapper.CustomerResourceMapper;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

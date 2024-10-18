@@ -29,7 +29,7 @@ public class CustomerProductResponseAdvice implements ResponseBodyAdvice<Object>
 			MediaType selectedContentType,
 			Class<? extends HttpMessageConverter<?>> selectedConverterType,
 			ServerHttpRequest request, ServerHttpResponse response) {
-		if (body instanceof ResponseModel responseModel && responseModel.getResultStatus().equals(ResultStatus.SUCCESS)){
+		if (body instanceof ResponseModel responseModel && responseModel.getResultStatus().equals(ResultStatus.SUCCESS)) {
 			responseModel.setMessage(environment.getProperty(ResultStatus.SUCCESS.getDescription()));
 		}
 		return body;

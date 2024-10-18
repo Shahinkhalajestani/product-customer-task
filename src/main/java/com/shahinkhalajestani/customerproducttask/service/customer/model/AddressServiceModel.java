@@ -1,4 +1,4 @@
-package com.shahinkhalajestani.customerproducttask.service.model;
+package com.shahinkhalajestani.customerproducttask.service.customer.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

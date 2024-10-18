@@ -1,7 +1,6 @@
-package com.shahinkhalajestani.customerproducttask.service.model;
+package com.shahinkhalajestani.customerproducttask.web.customer.dto;
 
-import java.util.List;
-
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,9 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CustomerServiceModel {
-
-	private String customerId;
+public class CustomerSignUpDto {
 
 	private String firstName;
 
@@ -19,9 +16,10 @@ public class CustomerServiceModel {
 
 	private String email;
 
+	@NotBlank
 	private String phoneNumber;
 
+	@NotBlank
 	private String nationalCode;
 
-	private List<String> addresses;
 }

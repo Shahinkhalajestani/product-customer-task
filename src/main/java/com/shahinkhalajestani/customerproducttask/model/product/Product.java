@@ -1,11 +1,9 @@
 package com.shahinkhalajestani.customerproducttask.model.product;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,8 +11,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Index;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Version;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -36,7 +34,7 @@ public class Product {
 
 
 	@Column(name = "product_id", nullable = false)
-	private Long productId;
+	private String productId;
 
 	@Column(name = "name", nullable = false)
 	private String name;
@@ -50,5 +48,14 @@ public class Product {
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name = "company_id")
 	private Company company;
+
+
+	@Enumerated(EnumType.STRING)
+	@Column(name = "review_visibility", nullable = false)
+	private ProductReviewVisibility reviewVisibility;
+
+
+	@Version
+	private int version;
 
 }
